@@ -1,4 +1,4 @@
-# Copyright (c) Kuba SzczodrzyÅ„ski 2022-09-23.
+# Copyright (c) Kuba Szczodrzyński 2022-09-23.
 
 import sys
 from subprocess import PIPE, Popen
