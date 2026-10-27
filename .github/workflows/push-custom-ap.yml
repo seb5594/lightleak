@@ -1,5 +1,9 @@
 name: Push (CustomAP)
 on:
+  pull_request:
+    paths:
+      - .github/workflows/push-custom-ap.yml
+      - platformio-custom-ap/**
   push:
     branches: ["master"]
     paths:
@@ -36,6 +40,7 @@ jobs:
         platformio-custom-ap/dist/*.*
   gh-release:
     name: Publish GitHub release
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
     needs:
       - version
       - build-pio
